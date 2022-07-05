@@ -17,10 +17,31 @@ funcoes = (1,2,3,4,5)
 user = input('Olá qual o seu nome? ')
 func = int(input(f'Bem vindo(a) {user}!\nQual função deseja utilizar?\n1 - Soma\n2 - Subtração\n3 - Multiplicação\n'))
 while func not in funcoes:
-    func = int(input('O valor digitado não é valido, por favor escolha uma das opções abaixo:                     \n1 - Soma\n2 - Subtração\n3 - Multiplicação\n'))
+    func = int(input('O valor digitado não é valido, por favor escolha uma das opções abaixo:\n1 - Soma\n2 - Subtração\n3 - Multiplicação\n'))
+
+# O trecho abaixo é para definir a função de soma que será usada na calculadora
+def funcao_soma (*lista):
+  lista = []
+  lista.append(int(input('Informe um número: ')))
+  decision = input('Deseja inserir outro número?\n[S] - Sim\n[N] - Não\n').upper()
+  while decision == 'S':
+    lista.append(int(input('Informe um número: ')))
+    decision = input('Deseja inserir outro número?\n[S] - Sim\n[N] - Não\n').upper()
+  total = sum(lista)
+  print(f'A soma dos valores digitados é {total}')
+
+# O trecho abaixo é para definir a função de subtração que será usada na calculadora
+def funcao_menos ():
+  arg1 = float(input('Informe um valor: '))
+  arg2 = float(input('Informe outro valor: '))
+  total = arg2 - arg1
+  print(f'A subtração dos valores informados é {total}')
 
 
-# In[ ]:
+if func == 1:
+  funcao_soma()
+elif func == 2:
+  funcao_menos()
 
 
 
